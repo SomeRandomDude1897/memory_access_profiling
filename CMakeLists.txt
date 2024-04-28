@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.5)
+set( CMAKE_CXX_COMPILER "C:/msys64/ucrt64/bin/g++.exe" )
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+project(main LANGUAGES CXX)
+
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+file(GLOB SOURCES CONFIGURE_DEPENDS
+./src/*.cpp
+./src/*.h
+)
+
+add_executable(main ${SOURCES})
